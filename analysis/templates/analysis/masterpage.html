@@ -1,0 +1,247 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap Min CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css/' %}">
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/animate.css/' %}">
+	<!-- Meanmenu Min CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/meanmenu.css/' %}">
+	<!-- Boxicons Min CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/boxicons.min.css/' %}">
+	<!-- Magnific Popup Min CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.min.css/' %}">
+	<!-- Owl Carousel Min CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css/' %}">
+	<!-- Flaticon CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/flaticon.css/' %}">
+	<!-- Odometer CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/odometer.css/' %}">
+	<!-- Slick CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/slick.css/' %}">
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/style.css/' %}">
+	<!-- Responsive CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/responsive.css/' %}">
+	<!-- Fontawesome -->
+	<!-- <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css/')}}" rel="stylesheet" type="text/css"> -->
+
+	{% if title %}
+	<title>Django Blog - {{title}}</title>
+	{% else %}
+	<title>Django Blog</title>
+	{% endif %}
+	{% block css %}
+	{% endblock %}
+	<link rel=" icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+</head>
+
+<body>
+
+	<!-- Start Preloader Area -->
+	<div class="preloader">
+		<div class="spinner"></div>
+	</div>
+	<!-- End Preloader Area -->
+
+	<!-- Start Navbar Area -->
+	<header id="header" class="headroom">
+		<div class="startp-responsive-nav">
+			<div class="container">
+				<div class="startp-responsive-menu">
+					<div class="logo">
+						<a href="http://pharminsci.com/">
+							<img src="{% static 'assets/img/logo.png' %}" alt="logo">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="startp-nav">
+			<div class="container">
+				<nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="http://pharminsci.com/">
+                        <img src="{% static 'assets/img/logo.png' %}" alt="logo">
+                    </a>
+					<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+						<ul class="navbar-nav nav ml-auto">
+							<li class="nav-item"><a href="http://pharminsci.com/" class="nav-link  
+								{!! (Request::is('user/index') ? 'active' : '') !!}">Home </a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="others-option">
+
+						<!-- <a href="{{ route('user.logout' %}" class="btn btn-light">Log out</a> -->
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<!-- End Navbar Area -->
+
+	<!-- Start Page Title -->
+	<div class="page-title-area">
+		<div class="d-table">
+			<div class="d-table-cell">
+				<div class="container">
+					{% block title %} {% endblock %}
+					{% if messages %}
+						{% for message in messages %}
+						<div class="alert alert-{{ message.tags }}">
+							<!-- tag success or fail -->
+							{{ message }}
+						</div>
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+
+		<div class="shape1"><img src="{% static 'assets/img/shape1.png' %}" alt="shape"></div>
+		<div class="shape2 rotateme"><img src="{% static 'assets/img/shape2.svg' %}" alt="shape"></div>
+		<div class="shape3"><img src="{% static 'assets/img/shape3.svg' %}" alt="shape"></div>
+		<div class="shape4"><img src="{% static 'assets/img/shape4.svg' %}" alt="shape"></div>
+		<div class="shape5"><img src="{% static 'assets/img/shape5.png' %}" alt="shape"></div>
+		<div class="shape6 rotateme"><img src="{% static 'assets/img/shape4.svg' %}" alt="shape"></div>
+		<div class="shape7"><img src="{% static 'assets/img/shape4.svg' %}" alt="shape"></div>
+		<div class="shape8 rotateme"><img src="{% static 'assets/img/shape2.svg' %}" alt="shape"></div>
+	</div>
+	<!-- End Page Title -->
+	<section class="feedback-area ptb-80 bg-f7fafd">
+		<div class="container">
+			{% block content %} {% endblock %}
+		</div>
+
+		<div class="shape1"><img src="{% static 'assets/img/shape1.png' %}" alt="shape"></div>
+		<div class="shape2 rotateme"><img src="{% static 'assets/img/shape2.svg' %}" alt="shape"></div>
+		<div class="shape4"><img src="{% static 'assets/img/shape4.svg' %}" alt="shape"></div>
+		<div class="shape5"><img src="{% static 'assets/img/shape5.png' %}" alt="shape"></div>
+		<div class="shape6 rotateme"><img src="{% static 'assets/img/shape4.svg' %}" alt="shape"></div>
+		<div class="shape7"><img src="{% static 'assets/img/shape4.svg' %}" alt="shape"></div>
+		<div class="shape8 rotateme"><img src="{% static 'assets/img/shape2.svg' %}" alt="shape"></div>
+	</section>
+
+
+	<!-- Start Footer Area -->
+	<footer class="footer-area bg-f7fafd">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<div class="logo">
+							<a href="#"><img src="{% static 'assets/img/logo.png' %}" alt="logo"></a>
+						</div>
+						<p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+							facilisis.</p>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-footer-widget pl-5">
+						<h3>Company</h3>
+						<ul class="list">
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Features</a></li>
+							<li><a href="#">Our Pricing</a></li>
+							<li><a href="#">Latest News</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h3>Support</h3>
+						<ul class="list">
+							<li><a href="#">FAQ's</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Terms & Condition</a></li>
+							<li><a href="#">Community</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h3>Address</h3>
+
+						<ul class="footer-contact-info">
+							<li><i data-feather="map-pin"></i> 27 Division St, New York, NY 10002, USA</li>
+							<li><i data-feather="mail"></i> Email: <a href="#">startp@gmail.com</a></li>
+							<li><i data-feather="phone-call"></i> Phone: <a href="#">+ (321) 984 754</a></li>
+						</ul>
+						<ul class="social-links">
+							<li><a href="#" class="facebook"><i data-feather="facebook"></i></a></li>
+							<li><a href="#" class="twitter"><i data-feather="twitter"></i></a></li>
+							<li><a href="#" class="instagram"><i data-feather="instagram"></i></a></li>
+							<li><a href="#" class="linkedin"><i data-feather="linkedin"></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-12 col-md-12">
+					<div class="copyright-area">
+						<p>Copyright @2020 StartP. All rights reserved</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<img src="{% static 'assets/img/map.png' %}" class="map" alt="map">
+		<div class="shape1"><img src="{% static 'assets/img/shape1.png' %}" alt="shape"></div>
+		<div class="shape8 rotateme"><img src="{% static 'assets/img/shape2.svg' %}" alt="shape"></div>
+	</footer>
+	<!-- End Footer Area -->
+	
+
+	<div class="go-top"><i data-feather="arrow-up"></i></div>
+
+	<!-- Jquery Min JS -->
+	<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+	<!-- Popper Min JS -->
+	<script src="{% static 'assets/js/popper.min.js' %}"></script>
+	<!-- Bootstrap Min JS -->
+	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+	<!-- Meanmenu Min JS -->
+	<script src="{% static 'assets/js/jquery.meanmenu.min.js' %}"></script>
+	<!-- WOW Min JS -->
+	<script src="{% static 'assets/js/wow.min.js' %}"></script>
+	<!-- Magnific Popup Min JS -->
+	<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- Appear Min JS -->
+	<script src="{% static 'assets/js/jquery.appear.js' %}"></script>
+	<!-- Odometer Min JS -->
+	<script src="{% static 'assets/js/odometer.min.js' %}"></script>
+	<!-- Slick Min JS -->
+	<script src="{% static 'assets/js/slick.js' %}"></script>
+	<!-- Headroom JS -->
+	<script src="{% static 'assets/js/headroom.js' %}"></script>
+	<!-- Owl Carousel Min JS -->
+	<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+	<!-- Feather Icon Min JS -->
+	<script src="{% static 'assets/js/feather.min.js' %}"></script>
+	<!-- Form Validator Min JS -->
+	<script src="{% static 'assets/js/form-validator.min.js' %}"></script>
+	<!-- Contact Form Min JS -->
+	<script src="{% static 'assets/js/contact-form-script.js' %}"></script>
+	<!-- StartP Map JS FILE -->
+	<script src="{% static 'assets/js/startp-map.js' %}"></script>
+	<!-- Main JS -->
+	<script src="{% static 'assets/js/main.js' %}"></script>
+	<script>
+		$('.alert').delay(3000).fadeOut('slow');
+	</script>
+	{% block script %} {% endblock %}
+</body>
+
+</html>
