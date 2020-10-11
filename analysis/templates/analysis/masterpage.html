@@ -33,7 +33,7 @@
 	<!-- <link href="{% static 'assets/vendor/fontawesome-free/css/all.min.css/')}}" rel="stylesheet" type="text/css"> -->
 
 	{% if title %}
-	<title>Django Blog - {{title}}</title>
+	<title>Pharminsci - {{title}}</title>
 	{% else %}
 	<title>Django Blog</title>
 	{% endif %}
@@ -57,7 +57,7 @@
 				<div class="startp-responsive-menu">
 					<div class="logo">
 						<a href="http://pharminsci.com/">
-							<img src="{% static 'assets/img/logo.png' %}" alt="logo">
+							<img src="{% static 'assets/img/logo.png' %}" alt="logo" >
 						</a>
 					</div>
 				</div>
@@ -68,7 +68,7 @@
 			<div class="container">
 				<nav class="navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="http://pharminsci.com/">
-                        <img src="{% static 'assets/img/logo.png' %}" alt="logo">
+                        <img src="{% static 'assets/img/logo.png' %}" alt="logo" height="80" width="60"> <p>Pharminsci</p>
                     </a>
 					<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
 						<ul class="navbar-nav nav ml-auto">
@@ -238,6 +238,7 @@
 	<script src="{% static 'assets/js/startp-map.js' %}"></script>
 	<!-- Main JS -->
 	<script src="{% static 'assets/js/main.js' %}"></script>
+	<script src="{% static 'assets/js/filedownload.js' %} "></script>
 	<script>
 		$('.alert').delay(3000).fadeOut('slow');
 	</script>

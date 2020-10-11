@@ -9,15 +9,40 @@ from .XYZAnalysis import *
 from .ToExcel import *
 from openpyxl import Workbook
 from openpyxl.utils.dataframe import dataframe_to_rows
+from rest_framework import viewsets
+from .models import Import
+from .serializers import ImportSerializer
+# from rest_framework.response import Response
+# from rest_framework.views import APIView
+# from rest_framework.parsers import MultiPartParser, FormParser
+
 
 from io import BytesIO
 import xlsxwriter
 import datetime
 
+
+# class ImportFile(viewsets.ModelViewSet):
+#     queryset = Import.objects.all()
+#     serializer_class = ImportSerializer
+# class InsertFile(APIView):
+#     parser_classes = (MultiPartParser, FormParser)
+
+#     def post(self, request, *args, **kwargs):
+#         file_serializer = FileSerializer(data=request.data)
+#         if file_serializer.is_valid():
+#             uploaded_file = request.FILES['link_to_specs']
+#             fs = FileSystemStorage()
+#             dat = fs.save(uploaded_file.name, uploaded_file)
+#             return handle_upload_file(request,dat)
+#         else:
+#             return Response(f'Please insert file!', status=status.HTTP_400_BAD_REQUEST)
+
+
+
 def home(request):
     if request.method == "POST":
         form = ImportFile(request.POST, request.FILES)
-        print(form.is_valid())
         if form.is_valid():
             form.save()
             uploaded_file = request.FILES['link_to_specs']

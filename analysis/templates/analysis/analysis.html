@@ -6,7 +6,7 @@
 {% block title %}
 <section class="checkout-area ptb-80">
 	<div class="container">
-		<form  id="import" method="post" 
+		<form  id="import" method="post"  class="fileDownloadForm"
 			enctype="multipart/form-data">
 			{% csrf_token %}
 			<!-- Order -->
@@ -54,6 +54,13 @@
 			$("#loader").css('display','block');
 		});
 	});
-	
+
+	// $(document).on("submit", "form.fileDownloadForm", function (e) {
+    // $.fileDownload($(this).prop('action'), {
+    //     httpMethod: "POST",
+	// 	data: $(this).serialize(),
+	// });
+// });
+
 </script>
 {% endblock %}

@@ -21,9 +21,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ou^^8-g*-9xy^e9-+pfhjg&%wdn23-91zi_oha%fhctjru&*m4'
+# SECRET_KEY = 'ou^^8-g*-9xy^e9-+pfhjg&%wdn23-91zi_oha%fhctjru&*m4'
+# Read SECRET_KEY from an environment variable
+import os
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','ou^^8-g*-9xy^e9-+pfhjg&%wdn23-91zi_oha%fhctjru&*m4')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = []
 
@@ -42,6 +47,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'numpy',
     'sklearn',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
